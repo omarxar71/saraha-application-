@@ -4,6 +4,10 @@ const genders = {
     mala: "male", 
     female : "female"
 }
+export const roles = {
+    admin : "admin" , 
+    user: "user",
+}
 
 //schema 
 const userSchema = new Schema({
@@ -12,7 +16,10 @@ const userSchema = new Schema({
     userName : {type:String , require: true , unique:true},
     phoneNumber: {type:String , require: true  , unique: true},
     gender:{type:String ,Enum: Object.values(genders)}, 
-    isActivated : {type:Boolean , default:false}
+    isActivated : {type:Boolean , default:false}, 
+    role : {type:String ,enum : Object.values(roles) , default: roles.user}, 
+    UpdateTimePassword :Date , 
+    isDeleted:{type:Boolean , default:false},
 },{timestamps:true})
 
 

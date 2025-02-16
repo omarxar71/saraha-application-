@@ -1,6 +1,6 @@
 import { EventEmitter } from "events"
-import {verifyEmail} from "../utils/signupHtml.js";
-import sendEmail from "../utils/sendEmail.js"
+import {verifyEmail} from "./signupHtml.js";
+import sendEmail from "./sendEmail.js"
 import  jwt  from 'jsonwebtoken';
 
 export const emailEvent = new EventEmitter()

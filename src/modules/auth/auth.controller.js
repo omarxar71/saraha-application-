@@ -1,6 +1,6 @@
 import { Router } from "express";
 import * as authService from "./auth.service.js";
-import { asyncHandler } from "../../utils/asyncHandler.js";
+import { asyncHandler } from "../../utils/golobal error/asyncHandler.js";
 import {validation} from "../../middleware/validation.midlleware.js";
 import * as authSchemas from "./validation.schema.js"
 const router = Router()

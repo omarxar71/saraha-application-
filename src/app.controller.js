@@ -1,6 +1,7 @@
 import connectDb from "./DB/connection.js"
 import userRouter from "./modules/User/user.controller.js"
 import authRouter from "./modules/auth/auth.controller.js"
+import messageRouter from "./modules/messages/messages.controller.js"
 const bootsrap =async(app , express)=>{
     // connection to db
     await connectDb()
@@ -9,6 +10,7 @@ const bootsrap =async(app , express)=>{
     app.use(express.json())
     app.use("/user" , userRouter)
     app.use("/auth" , authRouter)
+    app.use("/messages" , messageRouter)
     //not found page
     app.all("*" , (req ,res ,next)=>{
         return res.status(404).json({message : "not found page"})
